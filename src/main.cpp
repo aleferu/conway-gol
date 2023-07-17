@@ -10,12 +10,23 @@ int main(void) {
     SetTargetFPS(60);
 
     CellCollection cellCollection;
+    bool play = false;
+    int count = 0;
     // Main loop
     while (!WindowShouldClose()) {
         // Input
         if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
             Vector2 mousePos = GetMousePosition();
             cellCollection.setCellAlive(mousePos.x, mousePos.y);
+        } else if (IsMouseButtonDown(MOUSE_RIGHT_BUTTON)) {
+            Vector2 mousePos = GetMousePosition();
+            cellCollection.setCellDead(mousePos.x, mousePos.y);
+        } else if (IsKeyPressed(KEY_N)) {
+            cellCollection.computeNextCycle();
+        } else if (IsKeyPressed(KEY_P)) {
+            play = !play;
+        } else if (IsKeyPressed(KEY_C)) {
+            cellCollection.clearCells();
         }
 
         // Draw
@@ -25,6 +36,13 @@ int main(void) {
             cellCollection.drawCells();
 
         EndDrawing();
+
+        if (play) { 
+            ++count;
+            count %= 5;
+            if (count == 0)
+                cellCollection.computeNextCycle();
+        }
     }
     CloseWindow();
 

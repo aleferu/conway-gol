@@ -14,9 +14,9 @@ public:
     void clearCells();
     
 private:
-    static inline const int CELLSINROW = 100;
-    static inline const int CELLCOUNT = CELLINROW * CELLSINROW;
-    static inline const int CELLSIZE = 8;
+    static const int CELLSINROW = 100;
+    static const int CELLCOUNT = CELLSINROW * CELLSINROW;
+    static const int CELLSIZE = 8;
     bool* m_cells;
     bool* m_aux;
     inline bool shouldCellCount(const int row, const int col) const;

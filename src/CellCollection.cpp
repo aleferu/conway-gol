@@ -1,7 +1,6 @@
 #include "CellCollection.hpp"
 #include <algorithm>
 #include "raylib.h"
-#include <iostream>
 
 
 CellCollection::CellCollection()  {

@@ -1,5 +1,4 @@
 #include "raylib.h"
-#include <iostream>
 #include "CellCollection.hpp"
 
 
@@ -21,7 +20,7 @@ int main(void) {
         } else if (IsMouseButtonDown(MOUSE_RIGHT_BUTTON)) {
             Vector2 mousePos = GetMousePosition();
             cellCollection.setCellDead(mousePos.x, mousePos.y);
-        } else if (IsKeyPressed(KEY_N)) {
+        } else if (!play && IsKeyPressed(KEY_N)) {
             cellCollection.computeNextCycle();
         } else if (IsKeyPressed(KEY_P)) {
             play = !play;

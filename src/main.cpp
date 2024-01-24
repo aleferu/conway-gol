@@ -3,8 +3,8 @@
 
 
 int main(void) {
-    const float screenSize = 800.0f;
-    InitWindow((int) screenSize, (int) screenSize, "Conway's Game of Life");
+    int screenSize = 800;
+    InitWindow(screenSize, screenSize, "Conway's Game of Life");
     ClearWindowState(FLAG_WINDOW_RESIZABLE);
     SetTargetFPS(60);
 

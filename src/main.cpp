@@ -16,10 +16,10 @@ int main(void) {
         // Input
         if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
             Vector2 mousePos = GetMousePosition();
-            cellCollection.setCellAlive(mousePos.x, mousePos.y);
+            cellCollection.setCellAlive((int) mousePos.x, (int) mousePos.y);
         } else if (IsMouseButtonDown(MOUSE_RIGHT_BUTTON)) {
             Vector2 mousePos = GetMousePosition();
-            cellCollection.setCellDead(mousePos.x, mousePos.y);
+            cellCollection.setCellDead((int) mousePos.x, (int) mousePos.y);
         } else if (!play && IsKeyPressed(KEY_N)) {
             cellCollection.computeNextCycle();
         } else if (IsKeyPressed(KEY_P)) {

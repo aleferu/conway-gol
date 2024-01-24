@@ -25,4 +25,10 @@ or
 $ python3 build.py
 ```
 
+or
+
+```bash
+$ ./build.sh
+```
+
 or compile as you want. Don't forget to link raylib.
